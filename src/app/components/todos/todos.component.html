@@ -1,11 +1,17 @@
 <div class="todos">
   <form (submit)="addTodo()">
-    <input
-      name="input"
-      placeholder="Enter todo..."
-      [(ngModel)]="value"
-    />
-    <input type="submit" value="Add todo" class="submit">
+    <div class="input-group mb-3">
+      <input
+        name="input"
+        type="text"
+        class="form-control"
+        placeholder="Enter todo..."
+        [(ngModel)]="value"
+      />
+      <div class="input-group-append">
+        <input class="btn btn-outline-primary" value="Add todo" type="submit"/>
+      </div>
+    </div>
   </form>
   <div class="todo" *ngFor="let todo of todos; let i = index">
       <div class="id">{{ i }}</div>
