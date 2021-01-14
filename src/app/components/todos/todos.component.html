@@ -13,9 +13,16 @@
       </div>
     </div>
   </form>
-  <div class="todo" *ngFor="let todo of todos; let i = index">
-      <div class="id">{{ i }}</div>
-      <div class="content {{ todo.completed ? 'done' : ''}}" (click)="completeTodo(i)">{{ todo.content }}</div>
-      <button class="delete" (click)="deleteTodo(i)">Remove</button>
-  </div>
+
+  <table class="table table-striped">
+    <tbody>
+      <tr *ngFor="let todo of todos; let i = index">
+        <td class="my-row">
+          <span class="my-row__index">{{ i + 1 }}</span>
+          <div class="my-row__content {{ todo.completed ? 'done' : ''}}" (click)="completeTodo(i)">{{ todo.content }}</div>
+          <button class="btn btn-outline-primary" (click)="deleteTodo(i)">Remove</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>

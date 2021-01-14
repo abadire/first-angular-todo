@@ -1,3 +1,17 @@
 .done {
   text-decoration: line-through;
 }
+
+.my-row {
+  display: flex;
+  align-items: center;
+
+  &__index {
+    width: 10%;
+    font-weight: bold;
+  }
+
+  &__content {
+    flex-grow: 1;
+  }
+}
