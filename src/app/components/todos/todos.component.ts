@@ -9,7 +9,7 @@ import { Todo } from '../models/Todo';
 export class TodosComponent implements OnInit {
 
   todos:Todo[];
-  item:string = 'a';
+  value:string = '';
 
   constructor() { }
 
@@ -32,6 +32,15 @@ export class TodosComponent implements OnInit {
 
   deleteTodo(id:number) {
     this.todos = this.todos.filter((el, idx) => idx !== id);
+  }
+
+  addTodo() {
+    this.todos.push({
+      content: this.value,
+      completed: false
+    });
+
+    this.value = "";
   }
 
 }

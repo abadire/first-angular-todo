@@ -1,4 +1,12 @@
 <div class="todos">
+  <form (submit)="addTodo()">
+    <input
+      name="input"
+      placeholder="Enter todo..."
+      [(ngModel)]="value"
+    />
+    <input type="submit" value="Add todo" class="submit">
+  </form>
   <div class="todo" *ngFor="let todo of todos; let i = index">
       <div class="id">{{ i }}</div>
       <div class="content {{ todo.completed ? 'done' : ''}}" (click)="completeTodo(i)">{{ todo.content }}</div>
